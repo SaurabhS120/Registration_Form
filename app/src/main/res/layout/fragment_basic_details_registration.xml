@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registration.BasicDetailsRegistrationFragment">
+    tools:context=".registration.BasicDetailsRegistrationFragment"
+    android:layout_margin="5sp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,9 +15,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:minHeight="500sp"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:orientation="vertical">
             <!-- Profile photo -->
             <FrameLayout
                 android:id="@+id/profileLayout"
@@ -38,8 +39,8 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/round_border_background"
-                        android:src="@drawable/ic_baseline_person_24"
-                        android:contentDescription="@string/profile_photo" />
+                        android:contentDescription="@string/profile_photo"
+                        android:src="@drawable/ic_baseline_person_24" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -52,9 +53,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/round_border_background"
+                        android:contentDescription="@string/editprofilephoto"
                         android:padding="5sp"
-                        android:src="@drawable/ic_baseline_edit_24"
-                        android:contentDescription="@string/editprofilephoto" />
+                        android:src="@drawable/ic_baseline_edit_24" />
                 </androidx.cardview.widget.CardView>
             </FrameLayout>
 
@@ -63,34 +64,75 @@
                 android:id="@+id/firstNameLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/first_name"
-                android:layout_marginTop="20sp"/>
+                android:layout_marginTop="20sp"
+                android:text="@string/first_name" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:background="@drawable/border_background"
-                android:layout_margin="5sp">
+                android:background="@drawable/border_background">
+
                 <ImageView
                     android:id="@+id/firstNameSymbol"
                     android:layout_width="30sp"
                     android:layout_height="30sp"
-                    android:src="@drawable/ic_baseline_person_24"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_marginStart="10sp"
-                    android:contentDescription="@string/first_name" />
+                    android:contentDescription="@string/first_name"
+                    android:src="@drawable/ic_baseline_person_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <EditText
+                    android:id="@+id/firstNameEditText"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10sp"
                     android:layout_marginEnd="10sp"
-                    app:layout_constraintStart_toEndOf="@id/firstNameSymbol"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:hint="@string/enter_your_first_name_here"
                     android:autofillHints="name"
-                    android:inputType="textPersonName"/>
+                    android:hint="@string/enter_your_first_name_here"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/firstNameSymbol"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Last name -->
+            <TextView
+                android:id="@+id/lastNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:text="@string/last_name" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="@drawable/border_background">
+
+                <ImageView
+                    android:id="@+id/lastNameSymbol"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:contentDescription="@string/last_name"
+                    android:src="@drawable/ic_baseline_person_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/lastNameEditText"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:autofillHints="name"
+                    android:hint="@string/enter_your_last_name_here"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/lastNameSymbol"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!--    Bottom navigation layout-->

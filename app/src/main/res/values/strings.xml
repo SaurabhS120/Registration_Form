@@ -11,5 +11,7 @@
     <string name="profile_photo">Profile Photo</string>
     <string name="editprofilephoto">editProfilePhoto</string>
     <string name="enter_your_first_name_here">Enter your first name here</string>
-    <string name="first_name">First name</string>
+    <string name="first_name">First name*</string>
+    <string name="last_name">Last name*</string>
+    <string name="enter_your_last_name_here">Enter your last name here</string>
 </resources>
