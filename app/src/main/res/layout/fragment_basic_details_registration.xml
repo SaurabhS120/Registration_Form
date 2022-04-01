@@ -238,7 +238,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/femaleRadioGroup"
                     android:text="@string/female"
-                    android:checked="@={viewModel.isFemale}"/>
+                    android:checked="@={viewModel.isFemale}"
+                    />
             </RadioGroup>
 
             <!-- Password -->

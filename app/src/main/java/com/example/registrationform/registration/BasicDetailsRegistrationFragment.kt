@@ -17,12 +17,14 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
     ): View {
         // Inflate the layout for this fragment
         binding= FragmentBasicDetailsRegistrationBinding.inflate(layoutInflater)
+        val viewModel: BasicDetailsViewModel by viewModels()
+        binding.viewModel = viewModel
         //next or previous click events
         val onNextButtonClick:()->Unit={
-
+            viewModel.log()
         }
         val onPreviousButtonClick:()->Unit={
-
+            viewModel.log()
         }
         //dynamically set next prev buttons
         nextPreviousButtonsFormatting(
@@ -32,13 +34,10 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             onNextButtonClick,
             onPreviousButtonClick
         )
-        val viewModel: BasicDetailsViewModel by viewModels()
-        binding.viewModel = viewModel
-        binding.nextButton.setOnClickListener {
-            Log.d("first name",viewModel.firstName.value.toString())
-            Log.d("last name",viewModel.lastName.value.toString())
-        }
         //to here
+        binding.nextButton.setOnClickListener {
+            viewModel.log()
+        }
         return binding.root
     }
 }
