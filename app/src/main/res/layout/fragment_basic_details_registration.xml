@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.registrationform.registration.BasicDetailsViewModel" />
+    </data>
+<FrameLayout
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -92,7 +98,8 @@
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/firstNameSymbol"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.firstName}"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- Last name -->
@@ -129,7 +136,8 @@
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/lastNameSymbol"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.lastName}"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- Phone no -->
@@ -166,7 +174,8 @@
                     android:inputType="phone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/phoneNoSymbol"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.phoneNo}"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- Email -->
@@ -203,7 +212,8 @@
                     android:inputType="textEmailAddress"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/emailSymbol"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.email}"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- Gender -->
@@ -221,12 +231,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/maleRadioGroup"
-                    android:text="@string/male"/>
+                    android:text="@string/male"
+                    android:checked="@={viewModel.isMale}"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/femaleRadioGroup"
-                    android:text="@string/female"/>
+                    android:text="@string/female"
+                    android:checked="@={viewModel.isFemale}"/>
             </RadioGroup>
 
             <!-- Password -->
@@ -263,7 +275,8 @@
                     android:inputType="textPassword"
                     app:layout_constraintEnd_toStartOf="@id/showPasswordButton"
                     app:layout_constraintStart_toEndOf="@id/passwordSymbol"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.password}"/>
 
                 <ImageView
                     android:id="@+id/showPasswordButton"
@@ -313,7 +326,8 @@
                     android:inputType="textPassword"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/confirmPasswordSymbol"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.confirmPassword}"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -350,3 +364,4 @@
     </ScrollView>
 
 </FrameLayout>
+</layout>

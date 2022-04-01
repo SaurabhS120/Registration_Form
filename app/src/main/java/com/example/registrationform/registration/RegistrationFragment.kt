@@ -23,8 +23,9 @@ abstract class RegistrationFragment : Fragment() {
     private fun previousFragment(){
         activityMainViewModel.previousFragment()
     }
-    fun nextPreviousButtonsFormatting(bottomNavLayout: LinearLayout, nextButton: Button, previousButton: Button){
+    fun nextPreviousButtonsFormatting(bottomNavLayout: LinearLayout, nextButton: Button, previousButton: Button,onNextButtonClick:()->Unit,onPreviousButtonClick:()->Unit){
         nextButton.setOnClickListener {
+            onNextButtonClick()
             nextFragment()
         }
         if (hasPreviousFragment.not()){
@@ -35,6 +36,7 @@ abstract class RegistrationFragment : Fragment() {
             nextFragment()
         }
         previousButton.setOnClickListener {
+            onPreviousButtonClick()
             previousFragment()
         }
     }

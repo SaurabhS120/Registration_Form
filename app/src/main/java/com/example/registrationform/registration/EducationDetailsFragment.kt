@@ -15,9 +15,21 @@ class EducationDetailsFragment : RegistrationFragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentEducationDetailsBinding.inflate(layoutInflater)
+        binding = FragmentEducationDetailsBinding.inflate(layoutInflater)//next or previous click events
+        val onNextButtonClick:()->Unit={
+
+        }
+        val onPreviousButtonClick:()->Unit={
+
+        }
         //dynamically set next prev buttons
-        nextPreviousButtonsFormatting(binding.bottomNavLayout,binding.nextButton,binding.previousButton)
+        nextPreviousButtonsFormatting(
+            binding.bottomNavLayout,
+            binding.nextButton,
+            binding.previousButton,
+            onNextButtonClick,
+            onPreviousButtonClick
+        )
         return binding.root
     }
 }
