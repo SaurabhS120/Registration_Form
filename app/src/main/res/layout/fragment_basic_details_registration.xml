@@ -207,6 +207,29 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Gender -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:text="@string/gender" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/genderRadioGroup">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maleRadioGroup"
+                    android:text="@string/male"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/femaleRadioGroup"
+                    android:text="@string/female"/>
+            </RadioGroup>
+
             <!--    Bottom navigation layout-->
             <LinearLayout
                 android:id="@+id/bottomNavLayout"
