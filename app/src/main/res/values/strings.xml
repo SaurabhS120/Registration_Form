@@ -22,5 +22,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="password">Password*</string>
-    <string name="enter_your_password_here">Enter your password here</string>
+    <string name="confirm_password">Confirm Password*</string>
+    <string name="password_hint">Password</string>
+    <string name="show_password">Show Password</string>
 </resources>

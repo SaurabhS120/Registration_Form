@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".registration.BasicDetailsRegistrationFragment"
     android:layout_margin="5sp">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -229,6 +228,7 @@
                     android:id="@+id/femaleRadioGroup"
                     android:text="@string/female"/>
             </RadioGroup>
+
             <!-- Password -->
             <TextView
                 android:layout_width="match_parent"
@@ -259,10 +259,60 @@
                     android:layout_marginStart="10sp"
                     android:layout_marginEnd="10sp"
                     android:autofillHints="password"
-                    android:hint="@string/enter_your_password_here"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toStartOf="@id/showPasswordButton"
+                    app:layout_constraintStart_toEndOf="@id/passwordSymbol"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/showPasswordButton"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:contentDescription="@string/show_password"
+                    android:src="@mipmap/hide_eye"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Confirm Password -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:text="@string/confirm_password" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/border_background">
+
+                <ImageView
+                    android:id="@+id/confirmPasswordSymbol"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:contentDescription="@string/confirm_password"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/confirmPasswordEditText"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:autofillHints="password"
+                    android:hint="@string/password_hint"
                     android:inputType="textPassword"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/passwordSymbol"
+                    app:layout_constraintStart_toEndOf="@id/confirmPasswordSymbol"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
