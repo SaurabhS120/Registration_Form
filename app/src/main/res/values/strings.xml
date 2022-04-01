@@ -16,4 +16,6 @@
     <string name="enter_your_last_name_here">Enter your last name here</string>
     <string name="enter_your_phone_no_here">Enter your phone no here</string>
     <string name="phone_no">Phone no*</string>
+    <string name="email">Email*</string>
+    <string name="enter_your_email_here">Enter your email here</string>
 </resources>
