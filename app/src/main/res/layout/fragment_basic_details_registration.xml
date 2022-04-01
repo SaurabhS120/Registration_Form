@@ -39,7 +39,7 @@
                         android:layout_gravity="center"
                         android:background="@drawable/round_border_background"
                         android:contentDescription="@string/profile_photo"
-                        android:src="@drawable/ic_baseline_person_24" />
+                        android:src="@mipmap/person" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
