@@ -8,4 +8,6 @@
     <string name="next">next</string>
     <string name="previous">previous</string>
     <string name="address_details">address details</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="editprofilephoto">editProfilePhoto</string>
 </resources>
