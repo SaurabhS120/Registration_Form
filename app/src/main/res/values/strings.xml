@@ -14,4 +14,6 @@
     <string name="first_name">First name*</string>
     <string name="last_name">Last name*</string>
     <string name="enter_your_last_name_here">Enter your last name here</string>
+    <string name="enter_your_phone_no_here">Enter your phone no here</string>
+    <string name="phone_no">Phone no*</string>
 </resources>
