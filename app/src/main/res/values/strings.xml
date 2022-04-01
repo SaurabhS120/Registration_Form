@@ -21,4 +21,6 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="password">Password*</string>
+    <string name="enter_your_password_here">Enter your password here</string>
 </resources>
