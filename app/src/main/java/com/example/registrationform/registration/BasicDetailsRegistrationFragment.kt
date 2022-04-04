@@ -34,10 +34,6 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             onNextButtonClick,
             onPreviousButtonClick
         )
-        //to here
-        binding.nextButton.setOnClickListener {
-            viewModel.log()
-        }
         return binding.root
     }
 }

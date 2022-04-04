@@ -24,15 +24,12 @@ abstract class RegistrationFragment : Fragment() {
         activityMainViewModel.previousFragment()
     }
     fun nextPreviousButtonsFormatting(bottomNavLayout: LinearLayout, nextButton: Button, previousButton: Button,onNextButtonClick:()->Unit,onPreviousButtonClick:()->Unit){
-        nextButton.setOnClickListener {
-            onNextButtonClick()
-            nextFragment()
-        }
         if (hasPreviousFragment.not()){
             bottomNavLayout.removeView(previousButton)
         }
         nextButton.text=textForNextButton
         nextButton.setOnClickListener {
+            onNextButtonClick()
             nextFragment()
         }
         previousButton.setOnClickListener {
