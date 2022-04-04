@@ -16,11 +16,11 @@ class EducationDetailsFragment : RegistrationFragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentEducationDetailsBinding.inflate(layoutInflater)//next or previous click events
-        val onNextButtonClick:()->Unit={
-
+        val onNextButtonClick:()->Boolean={
+            true
         }
-        val onPreviousButtonClick:()->Unit={
-
+        val onPreviousButtonClick:()->Boolean={
+            true
         }
         //dynamically set next prev buttons
         nextPreviousButtonsFormatting(
