@@ -1,47 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".registration.EducationDetailsFragment">
+<layout>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/education_details"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <!--    Bottom navigation layout-->
-    <LinearLayout
-        android:id="@+id/bottomNavLayout"
+        <variable
+            name="viewModel"
+            type="com.example.registrationform.registration.EducationDetailsFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/previousButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/previous"
-            android:layout_weight="1"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:textColor="@color/design_default_color_primary"
-            android:textSize="20sp"/>
+        android:layout_height="match_parent"
+        tools:context=".registration.EducationDetailsFragment">
 
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            android:layout_weight="1"/>
-    </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/education_info"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- education -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/education" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background">
+
+                    <Spinner
+                        android:id="@+id/education_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:autofillHints="education" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/educationErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_select_education"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="invisible" />
+
+                <!-- Year of passing -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/year_of_passing" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background">
+
+                    <Spinner
+                        android:id="@+id/passingYearSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:autofillHints="yearOfPassing" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/passingYearErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_select_passing_year"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="invisible" />
+
+                <!-- Grade -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/grade" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background">
+
+                    <EditText
+                        android:id="@+id/gradeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:autofillHints="grade"
+                        android:hint="@string/enter_your_grade_here"
+                        android:inputType="text"
+                        android:text="@={viewModel.grade}" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/gradeErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_enter_grade"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="invisible" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_info"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- Experience -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/experience" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background">
+
+                    <EditText
+                        android:id="@+id/experienceEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:autofillHints="experience"
+                        android:hint="@string/enter_your_experience_here"
+                        android:inputType="number"
+                        android:text="@={viewModel.experience}" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/experienceErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_enter_your_experience"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="invisible" />
+
+                <!-- Designation -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/designation" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background">
+
+                    <EditText
+                        android:id="@+id/designationEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:autofillHints="designation"
+                        android:hint="@string/enter_your_designation_here"
+                        android:inputType="text"
+                        android:text="@={viewModel.designation}" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/designationErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_enter_your_designation"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="invisible" />
+
+                <!-- Domain -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/domain" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background">
+
+                    <EditText
+                        android:id="@+id/domainEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:autofillHints="domain"
+                        android:hint="@string/enter_your_domain_here"
+                        android:inputType="text"
+                        android:text="@={viewModel.domain}" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/domainErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_enter_your_domain"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="invisible" />
+
+            <!--    Bottom navigation layout-->
+            <LinearLayout
+                android:id="@+id/bottomNavLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/previousButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/previous"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/next"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
