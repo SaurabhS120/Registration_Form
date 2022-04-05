@@ -35,7 +35,11 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
         }
         val onPreviousButtonClick:()->Boolean={
             viewModel.log()
-            isDataValid()
+            val isValid = isDataValid()
+            if (isValid){
+                saveData()
+            }
+            isValid
         }
         //dynamically set next prev buttons
         nextPreviousButtonsFormatting(
