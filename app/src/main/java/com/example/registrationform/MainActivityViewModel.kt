@@ -5,11 +5,14 @@ import androidx.lifecycle.ViewModel
 import com.example.registrationform.registration.AddressDetailsFragment
 import com.example.registrationform.registration.BasicDetailsRegistrationFragment
 import com.example.registrationform.registration.EducationDetailsFragment
+import com.example.registrationform.registration.data.BasicRegistrationDetailsData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(): ViewModel() {
+    //data objects to save into room database
+    private lateinit var basicRegistrationDetailsData:BasicRegistrationDetailsData
     private val fragments = listOf(
         //all registration fragments to get user details
         BasicDetailsRegistrationFragment(),
@@ -54,5 +57,13 @@ class MainActivityViewModel @Inject constructor(): ViewModel() {
     }
     private fun submit(){
         TODO()
+    }
+    fun <T> setData(obj:T){
+        if (obj is BasicRegistrationDetailsData){
+            basicRegistrationDetailsData = obj
+        }
+        else{
+            throw Exception("data class is not recognized by view model")
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.example.registrationform.registration
 
 import android.util.Log
-import androidx.databinding.Bindable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 

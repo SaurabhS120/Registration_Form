@@ -6,9 +6,9 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationBinding
+import com.example.registrationform.registration.data.BasicRegistrationDetailsData
 import java.util.regex.Pattern
 
 class BasicDetailsRegistrationFragment : RegistrationFragment() {
@@ -21,13 +21,17 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
     ): View {
         // Inflate the layout for this fragment
         binding= FragmentBasicDetailsRegistrationBinding.inflate(layoutInflater)
-        val viewModel: BasicDetailsViewModel by viewModels()
+        val viewModel: BasicDetailsViewModel by activityViewModels()
         this.viewModel=viewModel
         binding.viewModel = viewModel
         //next or previous click events
         val onNextButtonClick:()->Boolean={
             viewModel.log()
-            isDataValid()
+            val isValid = isDataValid()
+            if (isValid){
+                saveData()
+            }
+            isValid
         }
         val onPreviousButtonClick:()->Boolean={
             viewModel.log()
@@ -47,8 +51,33 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
         binding.femaleRadioButton.setOnClickListener {
             viewModel.gender.postValue("Female")
         }
+        viewModel.gender.observe(viewLifecycleOwner){
+            if(it.equals("Male")){
+                viewModel.isMale.postValue(true)
+                binding.maleRadioButton.isChecked = true
+            }
+            else if (it.equals("Female")){
+                viewModel.isFemale.postValue(true)
+                binding.femaleRadioButton.isChecked = true
+            }
+        }
         return binding.root
     }
+
+    private fun saveData() {
+        val data = BasicRegistrationDetailsData(
+            viewModel.firstName.value?:"",
+            viewModel.lastName.value?:"",
+            viewModel.phoneNo.value?:"",
+            viewModel.email.value?:"",
+            viewModel.gender.value?:"",
+            viewModel.password.value?:"",
+            viewModel.confirmPassword.value?:"",
+        )
+        Log.d("info","first name : ${data.firstName}")
+        setData(data)
+    }
+
     private fun isDataValid(): Boolean {
         var valid=true
         if (isValidFirstName().not())           valid=false
@@ -119,5 +148,4 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
         }
         return false
     }
-
 }
