@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import com.example.registrationform.R
 import com.example.registrationform.databinding.FragmentAddressDetailsBinding
 
 class AddressDetailsFragment : RegistrationFragment() {
@@ -30,6 +32,18 @@ class AddressDetailsFragment : RegistrationFragment() {
             onNextButtonClick,
             onPreviousButtonClick
         )
+
+        //state spinner adapter
+        ArrayAdapter.createFromResource(requireContext(),
+            R.array.states,
+            android.R.layout.simple_spinner_dropdown_item
+        ).also { arrayAdapter ->
+
+            // Specify the layout to use when the list of choices appears
+            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            binding.stateSpinner.adapter = arrayAdapter
+        }
         return binding.root
     }
 }

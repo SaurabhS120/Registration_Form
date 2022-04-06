@@ -44,6 +44,10 @@
     <string name="domain">Domain</string>
     <string name="enter_your_domain_here">Enter your domain here</string>
     <string name="please_enter_valid_domain">Please enter valid domain</string>
+    <string name="address">Address</string>
+    <string name="landmark">Landmark</string>
+    <string name="city">City</string>
+    <string name="pin_code">Pin code</string>
     <string-array name="education">
         <item>Select Your Qualification</item>
         <item>Post Graduate</item>
@@ -66,5 +70,44 @@
         <item>2020</item>
         <item>2021</item>
         <item>2022</item>
+    </string-array>
+    <string-array name="states">
+        <item>Select Your State</item>
+        <item>Andaman and Nicobar</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadweep </item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Puducherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
     </string-array>
 </resources>
