@@ -113,7 +113,7 @@
                     android:id="@+id/gradeErrorText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/please_enter_grade"
+                    android:text="@string/please_enter_valid_grade"
                     android:textColor="@color/design_default_color_error"
                     android:visibility="invisible" />
 
@@ -208,7 +208,7 @@
                     android:id="@+id/domainErrorText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/please_enter_your_domain"
+                    android:text="@string/please_enter_valid_domain"
                     android:textColor="@color/design_default_color_error"
                     android:visibility="invisible" />
 

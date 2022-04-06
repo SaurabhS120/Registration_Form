@@ -32,7 +32,7 @@
     <string name="year_of_passing">Year of Passing</string>
     <string name="please_select_passing_year">Please select passing year</string>
     <string name="grade">Grade</string>
-    <string name="please_enter_grade">Please enter grade</string>
+    <string name="please_enter_valid_grade">Please enter valid grade</string>
     <string name="enter_your_grade_here">Enter your grade here</string>
     <string name="personal_info">Personal Info</string>
     <string name="experience">Experience</string>
@@ -43,7 +43,7 @@
     <string name="please_enter_your_designation">Please enter your designation</string>
     <string name="domain">Domain</string>
     <string name="enter_your_domain_here">Enter your domain here</string>
-    <string name="please_enter_your_domain">Please enter your domain</string>
+    <string name="please_enter_valid_domain">Please enter valid domain</string>
     <string-array name="education">
         <item>Select Your Qualification</item>
         <item>Post Graduate</item>
@@ -52,6 +52,7 @@
         <item>SSC</item>
     </string-array>
     <string-array name="year_of_passing">
+        <item>Enter year of passing</item>
         <item>2010</item>
         <item>2011</item>
         <item>2012</item>
