@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import com.example.registrationform.R
 import com.example.registrationform.databinding.FragmentEducationDetailsBinding
+import com.example.registrationform.registration.data.EducationDetailsData
 import java.util.regex.Pattern
 
 class EducationDetailsFragment : RegistrationFragment() {
@@ -28,12 +29,12 @@ class EducationDetailsFragment : RegistrationFragment() {
         //next or previous click events
         val onNextButtonClick:()->Boolean={
             val isValid = isDataValid()
-
+            if (isValid) saveData()
             isValid
         }
         val onPreviousButtonClick:()->Boolean={
             val isValid = isDataValid()
-
+            if (isValid) saveData()
             isValid
         }
         //dynamically set next prev buttons
@@ -149,6 +150,19 @@ class EducationDetailsFragment : RegistrationFragment() {
             binding.domainErrorText.visibility = View.INVISIBLE
         }
         return valid
+    }
+    fun saveData(){
+        val data =with(viewModel) {
+             EducationDetailsData(
+                 education.value.toString(),
+                 year_of_passing.value.toString(),
+                 grade.value.toString(),
+                 experience.value.toString(),
+                 domain.value.toString(),
+                 designation.value.toString()
+            )
+        }
+        setData(data)
     }
 
 }
