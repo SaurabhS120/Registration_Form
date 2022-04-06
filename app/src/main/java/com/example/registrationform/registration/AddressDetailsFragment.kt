@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import com.example.registrationform.R
 import com.example.registrationform.databinding.FragmentAddressDetailsBinding
+import com.example.registrationform.registration.data.AddressDetailsData
 import java.util.regex.Pattern
 
 class AddressDetailsFragment : RegistrationFragment() {
@@ -123,5 +124,17 @@ class AddressDetailsFragment : RegistrationFragment() {
             binding.stateErrorTextView.visibility = View.INVISIBLE
             return true
         }
+    }
+    fun saveData(){
+        val data = with(viewModel){
+            AddressDetailsData(
+                address.value.toString(),
+                landmark.value.toString(),
+                city.value.toString(),
+                state.value.toString(),
+                pinCode.value.toString()
+            )
+        }
+        setData(data)
     }
 }
