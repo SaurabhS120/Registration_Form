@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import com.example.registrationform.R
 import com.example.registrationform.databinding.FragmentAddressDetailsBinding
+import java.util.regex.Pattern
 
 class AddressDetailsFragment : RegistrationFragment() {
     override fun getFragmentName(): String = "Your addresses"
@@ -26,10 +27,14 @@ class AddressDetailsFragment : RegistrationFragment() {
         binding.viewModel = viewModel
         //next or previous click events
         val onNextButtonClick:()->Boolean={
-            true
+            val isValid = isDataValid()
+
+            isValid
         }
         val onPreviousButtonClick:()->Boolean={
-            true
+            val isValid = isDataValid()
+
+            isValid
         }
         //dynamically set next prev buttons
         nextPreviousButtonsFormatting(
@@ -59,5 +64,64 @@ class AddressDetailsFragment : RegistrationFragment() {
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
         return binding.root
+    }
+    fun isDataValid():Boolean{
+        var isValid = true
+        if (isAddressValid().not())isValid = false
+        if (isLandmarkValid().not())isValid = false
+        if (isCityValid().not())isValid = false
+        if (isPinCodeValid().not())isValid = false
+        if (isStateValid().not())isValid = false
+        return isValid
+    }
+    fun isAddressValid():Boolean{
+        val address = viewModel.address.value as CharSequence
+        if (Pattern.matches("^[a-zA-Z]{3,}",address)){
+            binding.addressEditText.error = null
+            return true
+        }else{
+            binding.addressEditText.error = "Address should contain more than 3 characters"
+            return false
+        }
+    }
+    fun isLandmarkValid():Boolean{
+        val landmark = viewModel.landmark.value as CharSequence
+        if (Pattern.matches("^[a-zA-Z]{3,}",landmark)){
+            binding.landmarkEditText.error = null
+            return true
+        }else{
+            binding.landmarkEditText.error = "Landmark should contain more than 3 characters"
+            return false
+        }
+    }
+    fun isCityValid():Boolean{
+        val city = viewModel.city.value as CharSequence
+        if (Pattern.matches("^[a-zA-Z]{3,}",city)){
+            binding.cityEditText.error = null
+            return true
+        }else{
+            binding.cityEditText.error = "City should contain more than 3 characters"
+            return false
+        }
+    }
+    fun isPinCodeValid():Boolean{
+        val pinCode = viewModel.pinCode.value as CharSequence
+        if (Pattern.matches("^[0-9]{6}",pinCode)){
+            binding.pinCodeEditText.error = null
+            return true
+        }else{
+            binding.pinCodeEditText.error = "Pin code should contain 6 numbers"
+            return false
+        }
+    }
+    fun isStateValid():Boolean{
+        val state = viewModel.state.value as CharSequence
+        if (Pattern.matches("Select Your State",state)){
+            binding.stateErrorTextView.visibility = View.VISIBLE
+            return false
+        }else{
+            binding.stateErrorTextView.visibility = View.INVISIBLE
+            return true
+        }
     }
 }

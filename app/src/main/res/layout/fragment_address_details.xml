@@ -123,7 +123,6 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_marginBottom="20sp"
                 android:background="@drawable/border_background">
 
                 <Spinner
@@ -133,6 +132,14 @@
                     android:layout_marginStart="10sp"
                     android:layout_marginEnd="10sp" />
             </FrameLayout>
+            <TextView
+                android:id="@+id/stateErrorTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/please_select_state"
+                android:textColor="@color/design_default_color_error"
+                android:layout_marginBottom="10sp"
+                android:visibility="invisible"/>
 
             <!--    Pin code -->
             <androidx.constraintlayout.widget.ConstraintLayout
