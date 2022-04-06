@@ -29,12 +29,12 @@ class AddressDetailsFragment : RegistrationFragment() {
         //next or previous click events
         val onNextButtonClick:()->Boolean={
             val isValid = isDataValid()
-
+            if (isValid) saveData()
             isValid
         }
         val onPreviousButtonClick:()->Boolean={
             val isValid = isDataValid()
-
+            if (isValid) saveData()
             isValid
         }
         //dynamically set next prev buttons
