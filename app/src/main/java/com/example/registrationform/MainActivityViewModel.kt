@@ -1,18 +1,27 @@
 package com.example.registrationform
 
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.registrationform.registration.AddressDetailsFragment
 import com.example.registrationform.registration.BasicDetailsRegistrationFragment
 import com.example.registrationform.registration.EducationDetailsFragment
 import com.example.registrationform.registration.data.AddressDetailsData
 import com.example.registrationform.registration.data.BasicRegistrationDetailsData
 import com.example.registrationform.registration.data.EducationDetailsData
+import com.example.registrationform.registration.data.UserDetailsData
+import com.example.registrationform.room.UsersDao
+import com.example.registrationform.room.UsersDatabase
+import com.example.registrationform.room.UsersRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainActivityViewModel @Inject constructor(): ViewModel() {
+class MainActivityViewModel @Inject constructor(val usersDao: UsersDao): ViewModel() {
     //data objects to save into room database
     private lateinit var basicRegistrationDetailsData:BasicRegistrationDetailsData
     private lateinit var educationDetailsData:EducationDetailsData
@@ -41,7 +50,9 @@ class MainActivityViewModel @Inject constructor(): ViewModel() {
         if (hasNextFragment()){
             currentFragment.postValue(fragments[++currentPosition])
         }else{
-            submit()
+            viewModelScope.launch(Dispatchers.IO){
+                submit()
+            }
         }
     }
     fun previousFragment(){
@@ -60,19 +71,22 @@ class MainActivityViewModel @Inject constructor(): ViewModel() {
         else "Submit"
     }
     private fun submit(){
-        TODO()
+        val userDetailsData = UserDetailsData(0,basicRegistrationDetailsData,educationDetailsData,addressDetailsData)
+        viewModelScope.launch (Dispatchers.IO){
+            usersDao.insertUser(userDetailsData)
+        }
     }
     fun <T> setData(obj:T){
         if (obj is BasicRegistrationDetailsData){
-            basicRegistrationDetailsData = obj
+            basicRegistrationDetailsData = obj.copy()
         }
         else if (obj is EducationDetailsData){
-            educationDetailsData = obj
+            educationDetailsData = obj.copy()
         }
         else if (obj is AddressDetailsData){
-            addressDetailsData = obj
+            addressDetailsData = obj.copy()
         }
-        else{
+        else {
             throw Exception("data class is not recognized by view model")
         }
     }

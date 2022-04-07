@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "user_details")
 data class UserDetailsData(
     @PrimaryKey(autoGenerate = true)
-    val id:Int?,
+    val id:Int = 0,
     @Embedded
     val basicRegistrationDetailsData: BasicRegistrationDetailsData,
     @Embedded

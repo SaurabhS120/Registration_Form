@@ -128,6 +128,7 @@ class AddressDetailsFragment : RegistrationFragment() {
     fun saveData(){
         val data = with(viewModel){
             AddressDetailsData(
+                0,
                 address.value.toString(),
                 landmark.value.toString(),
                 city.value.toString(),

@@ -154,6 +154,7 @@ class EducationDetailsFragment : RegistrationFragment() {
     fun saveData(){
         val data =with(viewModel) {
              EducationDetailsData(
+                 0,
                  education.value.toString(),
                  year_of_passing.value.toString(),
                  grade.value.toString(),

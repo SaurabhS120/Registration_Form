@@ -1,9 +1,12 @@
 package com.example.registrationform.registration.data
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "basic_details")
 data class BasicRegistrationDetailsData(
+    @PrimaryKey(autoGenerate = true)
+    var basicDetailId:Int = 0,
     var firstName : String,
     var lastName : String,
     var phoneNo : String,

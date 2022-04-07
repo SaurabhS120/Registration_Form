@@ -70,13 +70,13 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
 
     private fun saveData() {
         val data = BasicRegistrationDetailsData(
+            0,
             viewModel.firstName.value?:"",
             viewModel.lastName.value?:"",
             viewModel.phoneNo.value?:"",
             viewModel.email.value?:"",
             viewModel.gender.value?:"",
-            viewModel.password.value?:"",
-            viewModel.confirmPassword.value?:"",
+            viewModel.password.value?:""
         )
         Log.d("info","first name : ${data.firstName}")
         setData(data)
