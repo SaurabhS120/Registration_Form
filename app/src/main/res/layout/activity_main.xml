@@ -19,7 +19,8 @@
         android:layout_height="0sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/usersTextView"
-        app:layout_constraintBottom_toTopOf="@id/registerButton"/>
+        app:layout_constraintBottom_toTopOf="@id/registerButton"
+        tools:listitem="@layout/user_recycler_layout"/>
 
 
 
