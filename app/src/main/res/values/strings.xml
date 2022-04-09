@@ -49,6 +49,8 @@
     <string name="city">City</string>
     <string name="pin_code">Pin code</string>
     <string name="please_select_state">Please select state</string>
+    <string name="users">users :</string>
+    <string name="user_full_name">user full name</string>
     <string-array name="education">
         <item>Select Your Qualification</item>
         <item>Post Graduate</item>
