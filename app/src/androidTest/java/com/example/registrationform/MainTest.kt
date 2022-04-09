@@ -16,9 +16,10 @@ import org.junit.runner.RunWith
 @LargeTest
 class MainTest {
     @get:Rule
-    val activityRule = ActivityScenarioRule(RegistrationActivity::class.java)
+    val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test fun mainTest(){
+        onView(withId(R.id.registerButton)).perform(click())
         onView(withId(R.id.firstNameEditText)).perform(scrollTo()).perform(typeText("abc"))
         onView(withId(R.id.lastNameEditText)).perform(scrollTo()).perform(typeText("abc"))
         onView(withId(R.id.phoneNoEditText)).perform(scrollTo()).perform(typeText("1234567890"))
