@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,RegistrationActivity::class.java))
         }
         binding.usersRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        val adapter = UserRecyclerAdapter()
+        val adapter = UserRecyclerAdapter(baseContext)
         binding.usersRecyclerView.adapter = adapter
         users = UsersDatabase.getDatabase(this).usersDao().getUsers()
         users.observe(this){

@@ -1,6 +1,7 @@
 package com.example.registrationform
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import com.example.registrationform.databinding.UserRecyclerLayoutBinding
 import com.example.registrationform.registration.data.UserDetailsData
 import com.example.registrationform.room.UsersDatabase
 
-class UserRecyclerAdapter:RecyclerView.Adapter<UserRecyclerAdapter.UsersViewHolder>() {
+class UserRecyclerAdapter(val context: Context):RecyclerView.Adapter<UserRecyclerAdapter.UsersViewHolder>() {
     var users = listOf<UserDetailsData>()
     class UsersViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val binding=UserRecyclerLayoutBinding.bind(itemView)
@@ -28,6 +29,12 @@ class UserRecyclerAdapter:RecyclerView.Adapter<UserRecyclerAdapter.UsersViewHold
         val first_name = users[position].basicRegistrationDetailsData.firstName
         val last_name = users[position].basicRegistrationDetailsData.lastName
         holder.setName("$first_name $last_name")
+        holder.binding.root.setOnClickListener {
+            val intent = Intent(context,UserDetailsActivity::class.java)
+            intent.putExtra("user",users[position])
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
