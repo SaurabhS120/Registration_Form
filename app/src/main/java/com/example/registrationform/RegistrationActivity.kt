@@ -33,5 +33,10 @@ class RegistrationActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener {
             viewModel.previousFragment()
         }
+        viewModel.doneRegistration.observe(this){
+            if (it){
+                finish()
+            }
+        }
     }
 }

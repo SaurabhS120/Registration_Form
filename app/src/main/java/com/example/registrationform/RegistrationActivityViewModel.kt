@@ -22,6 +22,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RegistrationActivityViewModel @Inject constructor(val usersDao: UsersDao): ViewModel() {
+    val doneRegistration = MutableLiveData(false)
     //data objects to save into room database
     private lateinit var basicRegistrationDetailsData:BasicRegistrationDetailsData
     private lateinit var educationDetailsData:EducationDetailsData
@@ -74,6 +75,7 @@ class RegistrationActivityViewModel @Inject constructor(val usersDao: UsersDao):
         val userDetailsData = UserDetailsData(0,basicRegistrationDetailsData,educationDetailsData,addressDetailsData)
         viewModelScope.launch (Dispatchers.IO){
             usersDao.insertUser(userDetailsData)
+            doneRegistration.postValue(true)
         }
     }
     fun <T> setData(obj:T){
