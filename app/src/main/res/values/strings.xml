@@ -51,6 +51,7 @@
     <string name="please_select_state">Please select state</string>
     <string name="users">users :</string>
     <string name="user_full_name">user full name</string>
+    <string name="state">State</string>
     <string-array name="education">
         <item>Select Your Qualification</item>
         <item>Post Graduate</item>

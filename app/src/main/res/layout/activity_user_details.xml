@@ -1,9 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="vertical"
     tools:context=".UserDetailsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- basic details -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/basic_details"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- First Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/first_name"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/firstNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Last Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/last_name"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/lastNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Phone no -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_no"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/phoneNoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Email -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Gender -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/genderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- education details -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/education_details"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+
+        <!-- Education Details -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/education_details"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/educationDetailsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Year of passing -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/year_of_passing"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/passingYearTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Grade -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/grade"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/gradeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Experience -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/experience"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/experienceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Designation -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/designation"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/designationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Domain -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/domain"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/domainTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- address details -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/address_details"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+
+
+        <!-- Address -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Landmark -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/landmark"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/landmarkTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- City -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/city"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/cityTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- State -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/state"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/stateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Pin code -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pin_code"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/pinCodeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</ScrollView>
