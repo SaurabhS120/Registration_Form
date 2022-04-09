@@ -17,5 +17,5 @@ interface UsersDao {
     fun insertUser(basicRegistrationDetailsData: BasicRegistrationDetailsData)
 
     @Query("SELECT * FROM user_details")
-    fun getUsers():LiveData<UserDetailsData>
+    fun getUsers():LiveData<List<UserDetailsData>>
 }
