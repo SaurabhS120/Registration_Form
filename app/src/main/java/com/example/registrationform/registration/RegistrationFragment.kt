@@ -1,28 +1,27 @@
 package com.example.registrationform.registration
 
-import android.content.Context
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.example.registrationform.MainActivityViewModel
+import com.example.registrationform.RegistrationActivityViewModel
 
 abstract class RegistrationFragment : Fragment() {
     //all registration fragments are only for main activity
     //every variable will be assigned by main activity view model
     //all functions will be used by child fragments
     abstract fun getFragmentName():String
-    private lateinit var activityMainViewModel: MainActivityViewModel
+    private lateinit var activityRegistrationViewModel: RegistrationActivityViewModel
     var hasNextFragment=true
     var hasPreviousFragment=true
     var textForNextButton = "submit"
-    fun setViewModel(activityViewModel: MainActivityViewModel){
-        this.activityMainViewModel = activityViewModel
+    fun setViewModel(activityViewModel: RegistrationActivityViewModel){
+        this.activityRegistrationViewModel = activityViewModel
     }
     private fun nextFragment(){
-        activityMainViewModel.nextFragment()
+        activityRegistrationViewModel.nextFragment()
     }
     private fun previousFragment(){
-        activityMainViewModel.previousFragment()
+        activityRegistrationViewModel.previousFragment()
     }
     protected fun nextPreviousButtonsFormatting(bottomNavLayout: LinearLayout, nextButton: Button, previousButton: Button,onNextButtonClick:()->Boolean,onPreviousButtonClick:()->Boolean){
         if (hasPreviousFragment.not()){
@@ -37,6 +36,6 @@ abstract class RegistrationFragment : Fragment() {
         }
     }
     protected fun <T> setData(obj:T){
-        activityMainViewModel.setData(obj)
+        activityRegistrationViewModel.setData(obj)
     }
 }

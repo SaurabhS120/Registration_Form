@@ -5,19 +5,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.registrationform.databinding.ActivityMainBinding
+import com.example.registrationform.databinding.ActivityRegistrationBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class RegistrationActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegistrationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //all registration fragments will be handled by view model please refer before this
-        val viewModel:MainActivityViewModel by viewModels()
+        val viewModel:RegistrationActivityViewModel by viewModels()
         viewModel.currentFragment.observe(this){
             supportFragmentManager
                 .beginTransaction()

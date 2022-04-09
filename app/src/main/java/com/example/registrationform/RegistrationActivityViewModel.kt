@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainActivityViewModel @Inject constructor(val usersDao: UsersDao): ViewModel() {
+class RegistrationActivityViewModel @Inject constructor(val usersDao: UsersDao): ViewModel() {
     //data objects to save into room database
     private lateinit var basicRegistrationDetailsData:BasicRegistrationDetailsData
     private lateinit var educationDetailsData:EducationDetailsData

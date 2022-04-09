@@ -4,11 +4,9 @@ import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.anything
 import org.junit.Rule
 import org.junit.Test
@@ -18,7 +16,7 @@ import org.junit.runner.RunWith
 @LargeTest
 class MainTest {
     @get:Rule
-    val activityRule = ActivityScenarioRule(MainActivity::class.java)
+    val activityRule = ActivityScenarioRule(RegistrationActivity::class.java)
 
     @Test fun mainTest(){
         onView(withId(R.id.firstNameEditText)).perform(scrollTo()).perform(typeText("abc"))
