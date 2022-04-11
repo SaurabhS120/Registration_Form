@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class BasicDetailsViewModel: ViewModel() {
+    val profilePhoto = MutableLiveData("")
     val firstName = MutableLiveData("")
     val lastName = MutableLiveData("")
     val phoneNo = MutableLiveData("")

@@ -9,6 +9,7 @@ import androidx.room.PrimaryKey
 data class BasicRegistrationDetailsData(
     @PrimaryKey(autoGenerate = true)
     var basicDetailId:Int = 0,
+    var profilePhoto : String,
     var firstName : String,
     var lastName : String,
     var phoneNo : String,
@@ -24,6 +25,7 @@ data class BasicRegistrationDetailsData(
         `in`.readString()?:"",
         `in`.readString()?:"",
         `in`.readString()?:"",
+        `in`.readString()?:"",
     )
     override fun describeContents(): Int {
         return 0
@@ -31,6 +33,7 @@ data class BasicRegistrationDetailsData(
 
     override fun writeToParcel(`in`: Parcel, flags: Int) {
         `in`.writeInt(basicDetailId)
+        `in`.writeString(profilePhoto)
         `in`.writeString(firstName)
         `in`.writeString(lastName)
         `in`.writeString(phoneNo)

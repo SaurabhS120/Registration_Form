@@ -6,6 +6,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultCallback
 import androidx.fragment.app.activityViewModels
 import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationBinding
 import com.example.registrationform.registration.data.BasicRegistrationDetailsData
@@ -71,6 +72,7 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
     private fun saveData() {
         val data = BasicRegistrationDetailsData(
             0,
+            viewModel.profilePhoto.value ?: "",
             viewModel.firstName.value?:"",
             viewModel.lastName.value?:"",
             viewModel.phoneNo.value?:"",
@@ -151,5 +153,12 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             binding.phoneNoEditText.error = "Please enter 10 digit mobile no"
         }
         return false
+    }
+    fun selectProfile(){
+        val contract = object : ActivityResultCallback<String>{
+            override fun onActivityResult(result: String?) {
+                TODO("Not yet implemented")
+            }
+        }
     }
 }
