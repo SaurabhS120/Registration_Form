@@ -120,6 +120,7 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
         if (isValidConfirmPassword().not())     valid=false
         if (isValidGender().not())              valid=false
         if (isValidPhoneNo().not())            valid=false
+        if (isProfilePhotoSelected().not())            valid=false
         return valid
     }
 
@@ -181,7 +182,17 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
         }
         return false
     }
-    fun selectProfile(){
+    private fun selectProfile(){
         resultContract.launch("image/jpeg")
+    }
+
+    private fun isProfilePhotoSelected():Boolean{
+        if (viewModel.profilePhoto.value?.length?:0 >0){
+            binding.profilePhotoErrorText.visibility = View.INVISIBLE
+            return true
+        }else{
+            binding.profilePhotoErrorText.visibility = View.VISIBLE
+        }
+        return false
     }
 }
