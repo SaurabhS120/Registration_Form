@@ -17,7 +17,16 @@
             android:text="@string/basic_details"
             android:textStyle="bold"
             android:textSize="24sp"/>
-
+        <!-- Profile Photo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_photo"/>
+        <ImageView
+            android:id="@+id/profilePhotoImageView"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:src="@mipmap/person"/>
         <!-- First Name -->
         <TextView
             android:layout_width="match_parent"

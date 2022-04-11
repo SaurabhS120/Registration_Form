@@ -63,6 +63,14 @@
                         android:src="@drawable/ic_baseline_edit_24" />
                 </androidx.cardview.widget.CardView>
             </FrameLayout>
+            <TextView
+                android:id="@+id/profilePhotoErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/please_select_profile_photo"
+                android:textColor="@color/design_default_color_error"
+                android:visibility="invisible"/>
 
             <!-- First name -->
             <TextView

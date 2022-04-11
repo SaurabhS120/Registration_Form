@@ -1,20 +1,45 @@
 package com.example.registrationform.registration
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
+import com.bumptech.glide.Glide
 import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationBinding
 import com.example.registrationform.registration.data.BasicRegistrationDetailsData
+import java.io.ByteArrayOutputStream
 import java.util.regex.Pattern
 
 class BasicDetailsRegistrationFragment : RegistrationFragment() {
     override fun getFragmentName(): String = "Register"
     private lateinit var binding:FragmentBasicDetailsRegistrationBinding
     private lateinit var viewModel: BasicDetailsViewModel
+    val resultContract = registerForActivityResult(ActivityResultContracts.GetContent()){
+        it?.let {
+            var encodedProfilePhoto = ""
+            val image_stream = requireContext().contentResolver.openInputStream(it)
+            var bitmap = BitmapFactory.decodeStream(image_stream)
+            bitmap = Bitmap.createScaledBitmap(bitmap, 128, 128, false)
+            val stream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            val byteArray: ByteArray = stream.toByteArray()
+            encodedProfilePhoto = Base64.encodeToString(byteArray, Base64.DEFAULT)
+            Log.d("base64", encodedProfilePhoto)
+            val byteArrayNew:ByteArray = Base64.decode(encodedProfilePhoto, Base64.DEFAULT)
+            Glide.with(requireContext())
+                .load(byteArrayNew)
+                .into(binding.profilePhotoImageView)
+            viewModel.profilePhoto.postValue(encodedProfilePhoto)
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,6 +74,9 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             onNextButtonClick,
             onPreviousButtonClick
         )
+        binding.profileLayout.setOnClickListener {
+            selectProfile()
+        }
         binding.maleRadioButton.setOnClickListener {
             viewModel.gender.postValue("Male")
         }
@@ -71,6 +99,7 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
     private fun saveData() {
         val data = BasicRegistrationDetailsData(
             0,
+            viewModel.profilePhoto.value ?: "",
             viewModel.firstName.value?:"",
             viewModel.lastName.value?:"",
             viewModel.phoneNo.value?:"",
@@ -91,6 +120,7 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
         if (isValidConfirmPassword().not())     valid=false
         if (isValidGender().not())              valid=false
         if (isValidPhoneNo().not())            valid=false
+        if (isProfilePhotoSelected().not())            valid=false
         return valid
     }
 
@@ -149,6 +179,19 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             return true
         }else{
             binding.phoneNoEditText.error = "Please enter 10 digit mobile no"
+        }
+        return false
+    }
+    private fun selectProfile(){
+        resultContract.launch("image/jpeg")
+    }
+
+    private fun isProfilePhotoSelected():Boolean{
+        if (viewModel.profilePhoto.value?.length?:0 >0){
+            binding.profilePhotoErrorText.visibility = View.INVISIBLE
+            return true
+        }else{
+            binding.profilePhotoErrorText.visibility = View.VISIBLE
         }
         return false
     }

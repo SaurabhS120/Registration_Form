@@ -52,6 +52,7 @@
     <string name="users">users :</string>
     <string name="user_full_name">user full name</string>
     <string name="state">State</string>
+    <string name="please_select_profile_photo">Please select profile photo</string>
     <string-array name="education">
         <item>Select Your Qualification</item>
         <item>Post Graduate</item>
