@@ -12,9 +12,9 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
-import com.bumptech.glide.Glide
 import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationBinding
 import com.example.registrationform.registration.data.BasicRegistrationDetailsData
+import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.util.regex.Pattern
 
@@ -33,10 +33,6 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             val byteArray: ByteArray = stream.toByteArray()
             encodedProfilePhoto = Base64.encodeToString(byteArray, Base64.DEFAULT)
             Log.d("base64", encodedProfilePhoto)
-            val byteArrayNew:ByteArray = Base64.decode(encodedProfilePhoto, Base64.DEFAULT)
-            Glide.with(requireContext())
-                .load(byteArrayNew)
-                .into(binding.profilePhotoImageView)
             viewModel.profilePhoto.postValue(encodedProfilePhoto)
         }
     }
@@ -91,6 +87,15 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
             else if (it.equals("Female")){
                 viewModel.isFemale.postValue(true)
                 binding.femaleRadioButton.isChecked = true
+            }
+        }
+        viewModel.profilePhoto.observe(viewLifecycleOwner){
+            if(it.isNotEmpty()){
+
+                val byteArrayNew:ByteArray = Base64.decode(it, Base64.DEFAULT)
+                val inputStream = ByteArrayInputStream(byteArrayNew)
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+                binding.profilePhotoImageView.setImageBitmap(bitmap)
             }
         }
         return binding.root

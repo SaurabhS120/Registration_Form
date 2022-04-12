@@ -1,12 +1,12 @@
 package com.example.registrationform
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.bumptech.glide.Glide
+import androidx.appcompat.app.AppCompatActivity
 import com.example.registrationform.databinding.ActivityUserDetailsBinding
 import com.example.registrationform.registration.data.UserDetailsData
+import java.io.ByteArrayInputStream
 
 class UserDetailsActivity : AppCompatActivity() {
     lateinit var binding:ActivityUserDetailsBinding
@@ -38,9 +38,9 @@ class UserDetailsActivity : AppCompatActivity() {
         binding.stateTextView.setText(userDetailsData.addressDetailsData.state)
         binding.pinCodeTextView.setText(userDetailsData.addressDetailsData.pinCode)
         val byteArrayNew:ByteArray = Base64.decode(userDetailsData.basicRegistrationDetailsData.profilePhoto, Base64.DEFAULT)
-        Glide.with(baseContext)
-            .load(byteArrayNew)
-            .into(binding.profilePhotoImageView)
+        val inputStream = ByteArrayInputStream(byteArrayNew)
+        val bitmap = BitmapFactory.decodeStream(inputStream)
+        binding.profilePhotoImageView.setImageBitmap(bitmap)
 
     }
 }
