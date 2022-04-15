@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.registrationform.R
+import com.example.registrationform.RegistrationActivity
+import com.example.registrationform.ViewModelFactory
 import com.example.registrationform.databinding.FragmentEducationDetailsBinding
 import com.example.registrationform.registration.data.EducationDetailsData
 import java.util.regex.Pattern
+import javax.inject.Inject
 
-class EducationDetailsFragment : RegistrationFragment() {
+class EducationDetailsFragment @Inject constructor() : RegistrationFragment() {
     override fun getFragmentName(): String = "Your Info"
     private lateinit var binding:FragmentEducationDetailsBinding
     lateinit var viewModel: EducationDetailsFragmentViewModel
@@ -23,7 +27,7 @@ class EducationDetailsFragment : RegistrationFragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentEducationDetailsBinding.inflate(layoutInflater)
-        val viewModel : EducationDetailsFragmentViewModel by activityViewModels()
+        val viewModel = ViewModelProvider(activity as RegistrationActivity, ViewModelFactory(requireContext())).get(EducationDetailsFragmentViewModel::class.java)
         this.viewModel = viewModel
         binding.viewModel = viewModel
         //next or previous click events

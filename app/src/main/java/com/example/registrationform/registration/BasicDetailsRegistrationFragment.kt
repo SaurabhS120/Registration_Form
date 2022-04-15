@@ -12,13 +12,17 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
+import com.example.registrationform.RegistrationActivity
+import com.example.registrationform.ViewModelFactory
 import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationBinding
 import com.example.registrationform.registration.data.BasicRegistrationDetailsData
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.util.regex.Pattern
+import javax.inject.Inject
 
-class BasicDetailsRegistrationFragment : RegistrationFragment() {
+class BasicDetailsRegistrationFragment @Inject constructor() : RegistrationFragment() {
     override fun getFragmentName(): String = "Register"
     private lateinit var binding:FragmentBasicDetailsRegistrationBinding
     private lateinit var viewModel: BasicDetailsViewModel
@@ -42,7 +46,7 @@ class BasicDetailsRegistrationFragment : RegistrationFragment() {
     ): View {
         // Inflate the layout for this fragment
         binding= FragmentBasicDetailsRegistrationBinding.inflate(layoutInflater)
-        val viewModel: BasicDetailsViewModel by activityViewModels()
+        val viewModel = ViewModelProvider(activity as RegistrationActivity,ViewModelFactory(requireContext())).get(BasicDetailsViewModel::class.java)
         this.viewModel=viewModel
         binding.viewModel = viewModel
         //next or previous click events

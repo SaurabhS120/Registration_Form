@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.registrationform.databinding.ActivityRegistrationBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RegistrationActivity : AppCompatActivity() {
@@ -17,7 +19,7 @@ class RegistrationActivity : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //all registration fragments will be handled by view model please refer before this
-        val viewModel:RegistrationActivityViewModel by viewModels()
+        val viewModel:RegistrationActivityViewModel = ViewModelProvider(this,ViewModelFactory(applicationContext)).get(RegistrationActivityViewModel::class.java)
         viewModel.currentFragment.observe(this){
             supportFragmentManager
                 .beginTransaction()
