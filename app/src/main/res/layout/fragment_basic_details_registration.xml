@@ -70,7 +70,8 @@
                 android:textAlignment="center"
                 android:text="@string/please_select_profile_photo"
                 android:textColor="@color/design_default_color_error"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:textSize="16sp"/>
 
             <!-- First name -->
             <TextView
@@ -254,6 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/please_select_gender"
+                android:textSize="16sp"
                 android:textColor="@color/design_default_color_error"
                 android:visibility="invisible"/>
 

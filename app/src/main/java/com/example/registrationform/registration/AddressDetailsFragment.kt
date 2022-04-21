@@ -81,7 +81,7 @@ class AddressDetailsFragment @Inject constructor() : RegistrationFragment() {
     }
     fun isAddressValid():Boolean{
         val address = viewModel.address.value as CharSequence
-        if (Pattern.matches("^[a-zA-Z]{3,}",address)){
+        if (Pattern.matches("^[0-9a-zA-Z ,]{3,}",address)){
             binding.addressEditText.error = null
             return true
         }else{
@@ -91,7 +91,7 @@ class AddressDetailsFragment @Inject constructor() : RegistrationFragment() {
     }
     fun isLandmarkValid():Boolean{
         val landmark = viewModel.landmark.value as CharSequence
-        if (Pattern.matches("^[a-zA-Z]{3,}",landmark)){
+        if (Pattern.matches("^[0-9a-zA-Z ,]{3,}",landmark)){
             binding.landmarkEditText.error = null
             return true
         }else{
@@ -101,7 +101,7 @@ class AddressDetailsFragment @Inject constructor() : RegistrationFragment() {
     }
     fun isCityValid():Boolean{
         val city = viewModel.city.value as CharSequence
-        if (Pattern.matches("^[a-zA-Z]{3,}",city)){
+        if (Pattern.matches("^[a-zA-Z ,]{3,}",city)){
             binding.cityEditText.error = null
             return true
         }else{
