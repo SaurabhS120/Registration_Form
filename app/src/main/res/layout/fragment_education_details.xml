@@ -60,7 +60,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/please_select_education"
                     android:textColor="@color/design_default_color_error"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:textSize="16sp"/>
 
                 <!-- Year of passing -->
                 <TextView
@@ -86,7 +87,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/please_select_passing_year"
                     android:textColor="@color/design_default_color_error"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:textSize="16sp" />
 
                 <!-- Grade -->
                 <TextView
@@ -115,7 +117,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/please_enter_valid_grade"
                     android:textColor="@color/design_default_color_error"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:textSize="16sp" />
 
 
                 <TextView
@@ -152,7 +155,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/please_enter_your_experience"
                     android:textColor="@color/design_default_color_error"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:textSize="16sp" />
 
                 <!-- Designation -->
                 <TextView
@@ -181,7 +185,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/please_enter_your_designation"
                     android:textColor="@color/design_default_color_error"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:textSize="16sp" />
 
                 <!-- Domain -->
                 <TextView
@@ -210,7 +215,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/please_enter_valid_domain"
                     android:textColor="@color/design_default_color_error"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:textSize="16sp" />
 
             <!--    Bottom navigation layout-->
             <LinearLayout
