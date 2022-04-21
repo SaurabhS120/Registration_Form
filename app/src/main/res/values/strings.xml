@@ -4,10 +4,10 @@
     <string name="register">Register</string>
     <string name="back_button">back button</string>
     <string name="education_details">Education details</string>
-    <string name="basic_details">basic details</string>
+    <string name="basic_details">Basic details</string>
     <string name="next">next</string>
     <string name="previous">previous</string>
-    <string name="address_details">address details</string>
+    <string name="address_details">Address details</string>
     <string name="profile_photo">Profile Photo</string>
     <string name="editprofilephoto">editProfilePhoto</string>
     <string name="enter_your_first_name_here">Enter your first name here</string>
