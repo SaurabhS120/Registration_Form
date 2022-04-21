@@ -15,7 +15,6 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistrationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //all registration fragments will be handled by view model please refer before this

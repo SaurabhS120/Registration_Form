@@ -21,9 +21,11 @@
         </activity>
         <activity
             android:name=".RegistrationActivity"
+            android:label="User Registration"
             android:exported="false" />
         <activity
             android:name=".UserDetailsActivity"
+            android:label="User Details"
             android:exported="false" />
     </application>
 
