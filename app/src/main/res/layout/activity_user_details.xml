@@ -44,12 +44,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             app:cardElevation="10sp"
-            card_view:cardCornerRadius="4dp">
+            card_view:cardCornerRadius="10sp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="10sp"
                 android:orientation="vertical">
 
                 <TextView
@@ -241,12 +241,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             app:cardElevation="10sp"
-            card_view:cardCornerRadius="4dp">
+            card_view:cardCornerRadius="10sp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="10sp"
                 android:orientation="vertical">
 
                 <TextView
@@ -471,12 +471,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             app:cardElevation="10sp"
-            card_view:cardCornerRadius="4dp">
+            card_view:cardCornerRadius="10sp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="10sp"
                 android:orientation="vertical">
 
                 <TextView
