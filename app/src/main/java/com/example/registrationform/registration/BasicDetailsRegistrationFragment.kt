@@ -3,15 +3,14 @@ package com.example.registrationform.registration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.text.InputType
 import android.util.Base64
 import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.registrationform.RegistrationActivity
 import com.example.registrationform.ViewModelFactory
@@ -100,6 +99,14 @@ class BasicDetailsRegistrationFragment @Inject constructor() : RegistrationFragm
                 val inputStream = ByteArrayInputStream(byteArrayNew)
                 val bitmap = BitmapFactory.decodeStream(inputStream)
                 binding.profilePhotoImageView.setImageBitmap(bitmap)
+            }
+        }
+        binding.showPasswordButton.setOnClickListener {
+            if (binding.passwordEditText.inputType != InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD ){
+                binding.passwordEditText.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }else {
+                binding.passwordEditText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
             }
         }
         return binding.root
