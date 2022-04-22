@@ -11,12 +11,13 @@ In this app you can register multiple users and see their details as per need. I
 Screenshots
 --------------------------------------------------------------------------------------------------------------------------------------------
 <p>
-<img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/MainActivity.png" alt="Main Activity Screenshot" width="200px">
+<img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/MainActivity.jpg" alt="Main Activity Screenshot" width="200px">
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/BasicDetailsFragment1.png" alt="Basic Details Fragment Screenshot" width="200px">
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/BasicDetailsFragment2.png" alt="Basic Details Fragment Screenshot" width="200px">
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/EducationDetailsFragment2.png" alt="Education Details Fragment Screenshot" width="200px">
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/AddressDatailsFragment.png" alt="Address Details Fragment Screenshot" width="200px">
-<img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/UserDetailsActivity.png" alt="User Details Activity Screenshot" width="200px">
+<img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/UserDetailsActivity1.png" alt="User Details Activity Screenshot" width="200px">
+<img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/UserDetailsActivity2.png" alt="User Details Activity Screenshot" width="200px">
 </p>
 
 Libraries Used
