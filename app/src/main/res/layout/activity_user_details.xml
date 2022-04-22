@@ -28,7 +28,7 @@
             android:layout_width="200sp"
             android:layout_height="200sp"
             android:src="@mipmap/person"
-            android:textAlignment="center"/>
+            />
             </androidx.cardview.widget.CardView>
         </FrameLayout>
 
@@ -67,30 +67,28 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/first_name"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/firstNameTextView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/test"
-                        android:textAlignment="center" />
+                        android:text="@string/test" />
                 </LinearLayout>
 
                 <!-- Last Name -->
@@ -100,31 +98,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12sp"
                         android:text="@string/last_name"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/lastNameTextView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/test"
-                        android:textAlignment="center" />
+                        android:text="@string/test" />
                 </LinearLayout>
                 <!-- Phone no -->
                 <LinearLayout
@@ -133,32 +129,30 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12sp"
                         android:text="@string/phone_no"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/phoneNoTextView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:layout_marginTop="12sp"
                         android:layout_weight="1"
-                        android:text="@string/test"
-                        android:textAlignment="center" />
+                        android:text="@string/test" />
                 </LinearLayout>
                 <!-- Email -->
                 <LinearLayout
@@ -167,30 +161,28 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/email"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/emailTextView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/test"
-                        android:textAlignment="center" />
+                        android:text="@string/test" />
                 </LinearLayout>
 
                 <!-- Gender -->
@@ -200,30 +192,28 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/gender"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/genderTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/test"
-                        android:textAlignment="center" />
+                        android:text="@string/test" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -255,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/education_details"
-                    android:textAlignment="center"
+                    
                     android:textSize="36sp"
                     android:textStyle="bold" />
 
@@ -267,30 +257,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/education_details"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/educationDetailsTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
                 <!-- Year of passing -->
                 <LinearLayout
@@ -299,30 +288,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/year_of_passing"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/passingYearTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
                 <!-- Grade -->
                 <LinearLayout
@@ -331,31 +319,30 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="12sp"
                         android:text="@string/grade"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/gradeTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- Experience -->
@@ -365,30 +352,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/experience"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/experienceTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- Designation -->
@@ -398,30 +384,30 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/designation"
-                        android:textAlignment="center"
+                        
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/designationTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- Domain -->
@@ -431,30 +417,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/domain"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/domainTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -486,7 +471,7 @@
                     android:layout_weight="1"
                     android:paddingBottom="12sp"
                     android:text="@string/address_details"
-                    android:textAlignment="center"
+                    
                     android:textSize="36sp"
                     android:textStyle="bold" />
 
@@ -497,30 +482,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/address"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/addressTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- Landmark -->
@@ -530,30 +514,30 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/landmark"
-                        android:textAlignment="center"
+                        
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/landmarkTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- City -->
@@ -563,30 +547,29 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/city"
-                        android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/cityTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- State -->
@@ -596,30 +579,30 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/state"
-                        android:textAlignment="center"
+                        
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/stateTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
 
                 <!-- Pin code -->
@@ -629,30 +612,30 @@
                     android:layout_marginTop="2sp"
                     android:layout_marginBottom="2sp"
                     android:background="@drawable/border_background"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="5sp">
 
                     <TextView
-                        android:layout_width="200sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/pin_code"
-                        android:textAlignment="center"
+                        
                         android:textStyle="bold" />
 
                     <View
-                        android:layout_width="2sp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
                         android:layout_marginStart="10sp"
                         android:layout_marginEnd="10sp"
                         android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/pinCodeTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/test"
-                        android:textAlignment="center" />
+                         />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

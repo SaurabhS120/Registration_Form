@@ -14,6 +14,10 @@
         <entry key="..\:/Users/Neosoft/AndroidStudioProjects/RegistrationForm/app/src/main/res/layout/fragment_education_details.xml" value="0.22" />
         <entry key="..\:/Users/Neosoft/AndroidStudioProjects/RegistrationForm/app/src/main/res/layout/user_recycler_layout.xml" value="0.161231884057971" />
         <entry key="..\:/Users/Neosoft/AndroidStudioProjects/Registration_Form/app/src/main/res/layout/activity_main.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/Neosoft/AndroidStudioProjects/Registration_Form/app/src/main/res/layout/activity_user_details.xml" value="0.33" />
+        <entry key="..\:/Users/Neosoft/AndroidStudioProjects/Registration_Form/app/src/main/res/layout/fragment_address_details_constraint_layout.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/Neosoft/AndroidStudioProjects/Registration_Form/app/src/main/res/layout/fragment_basic_details_registration_constraint_layout.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/Neosoft/AndroidStudioProjects/Registration_Form/app/src/main/res/layout/fragment_education_details_constraint_layout.xml" value="0.161231884057971" />
       </map>
     </option>
   </component>
