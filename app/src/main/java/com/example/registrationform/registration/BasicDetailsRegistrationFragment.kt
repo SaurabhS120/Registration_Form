@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.registrationform.RegistrationActivity
 import com.example.registrationform.ViewModelFactory
 import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationBinding
+import com.example.registrationform.databinding.FragmentBasicDetailsRegistrationConstraintLayoutBinding
 import com.example.registrationform.registration.data.BasicRegistrationDetailsData
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -23,7 +24,7 @@ import javax.inject.Inject
 
 class BasicDetailsRegistrationFragment @Inject constructor() : RegistrationFragment() {
     override fun getFragmentName(): String = "Register"
-    private lateinit var binding:FragmentBasicDetailsRegistrationBinding
+    private lateinit var binding:FragmentBasicDetailsRegistrationConstraintLayoutBinding
     private lateinit var viewModel: BasicDetailsViewModel
     val resultContract = registerForActivityResult(ActivityResultContracts.GetContent()){
         it?.let {
@@ -44,7 +45,7 @@ class BasicDetailsRegistrationFragment @Inject constructor() : RegistrationFragm
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding= FragmentBasicDetailsRegistrationBinding.inflate(layoutInflater)
+        binding= FragmentBasicDetailsRegistrationConstraintLayoutBinding.inflate(layoutInflater)
         val viewModel = ViewModelProvider(activity as RegistrationActivity,ViewModelFactory(requireContext())).get(BasicDetailsViewModel::class.java)
         this.viewModel=viewModel
         binding.viewModel = viewModel

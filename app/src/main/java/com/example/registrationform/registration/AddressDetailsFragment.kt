@@ -12,13 +12,14 @@ import com.example.registrationform.R
 import com.example.registrationform.RegistrationActivity
 import com.example.registrationform.ViewModelFactory
 import com.example.registrationform.databinding.FragmentAddressDetailsBinding
+import com.example.registrationform.databinding.FragmentAddressDetailsConstraintLayoutBinding
 import com.example.registrationform.registration.data.AddressDetailsData
 import java.util.regex.Pattern
 import javax.inject.Inject
 
 class AddressDetailsFragment @Inject constructor() : RegistrationFragment() {
     override fun getFragmentName(): String = "Your addresses"
-    private lateinit var binding:FragmentAddressDetailsBinding
+    private lateinit var binding:FragmentAddressDetailsConstraintLayoutBinding
     private lateinit var viewModel: AddressDetailsViewModel
 
     override fun onCreateView(
@@ -26,7 +27,7 @@ class AddressDetailsFragment @Inject constructor() : RegistrationFragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentAddressDetailsBinding.inflate(layoutInflater)
+        binding = FragmentAddressDetailsConstraintLayoutBinding.inflate(layoutInflater)
         val viewModel = ViewModelProvider(activity as RegistrationActivity, ViewModelFactory(requireContext())).get(AddressDetailsViewModel::class.java)
         this.viewModel = viewModel
         binding.viewModel = viewModel
