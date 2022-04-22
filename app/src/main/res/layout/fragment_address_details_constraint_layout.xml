@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.registrationform.registration.AddressDetailsViewModel" />
+    </data>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="2sp"
+        tools:context=".registration.AddressDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--    address -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/addressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/border_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="12sp">
+
+                <ImageView
+                    android:id="@+id/address_symbol"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:contentDescription="@string/address"
+                    android:src="@drawable/ic_baseline_domain_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/address_edit_text"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:autofillHints="postalAddress"
+                    android:hint="@string/address"
+                    android:inputType="text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/address_symbol"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.address}"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--    landmark -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/landmarkLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/border_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressLayout"
+                android:layout_marginTop="12sp">
+
+                <ImageView
+                    android:id="@+id/landmark_symbol"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:contentDescription="@string/landmark"
+                    android:src="@drawable/ic_baseline_domain_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/landmark_edit_text"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:autofillHints="landmark"
+                    android:hint="@string/landmark"
+                    android:inputType="text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/landmark_symbol"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.landmark}"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--    city -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/border_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/landmarkLayout"
+                android:layout_marginTop="12sp">
+
+                <ImageView
+                    android:id="@+id/city_symbol"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:contentDescription="@string/city"
+                    android:src="@drawable/ic_baseline_domain_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/city_edit_text"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:autofillHints="city"
+                    android:hint="@string/city"
+                    android:inputType="text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/city_symbol"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.city}"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/stateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="@drawable/border_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cityLayout"
+                android:layout_marginTop="24sp">
+
+                <Spinner
+                    android:id="@+id/state_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/stateErrorTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/please_select_state"
+                android:textColor="@color/design_default_color_error"
+                android:layout_marginBottom="10sp"
+                android:visibility="invisible"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stateLayout"/>
+
+            <!--    Pin code -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pinCodeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/border_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stateErrorTextView">
+
+                <ImageView
+                    android:id="@+id/pin_code_symbol"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="10sp"
+                    android:contentDescription="@string/pin_code"
+                    android:src="@drawable/ic_baseline_domain_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/pin_code_edit_text"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:autofillHints="postalCode"
+                    android:hint="@string/pin_code"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/pin_code_symbol"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@={viewModel.pinCode}"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--    Bottom navigation layout-->
+            <LinearLayout
+                android:id="@+id/bottomNavLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pinCodeLayout"
+                android:layout_marginTop="12sp">
+
+                <Button
+                    android:id="@+id/previousButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/previous"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/next"
+                    tools:ignore="ButtonStyle" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
