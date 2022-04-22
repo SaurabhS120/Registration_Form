@@ -18,6 +18,7 @@ Screenshots
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/AddressDatailsFragment.png" alt="Address Details Fragment Screenshot" width="200px">
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/UserDetailsActivity1.jpg" alt="User Details Activity Screenshot" width="200px">
 <img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/UserDetailsActivity2.jpg" alt="User Details Activity Screenshot" width="200px">
+<img src="https://github.com/SaurabhS120/Registration_Form/blob/master/Screenshots/UserDetailsActivity3.jpg" alt="User Details Activity Screenshot" width="200px">
 </p>
 
 Libraries Used
