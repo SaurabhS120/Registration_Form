@@ -9,7 +9,7 @@ import com.example.registrationform.registration.data.BasicRegistrationDetailsDa
 import com.example.registrationform.registration.data.EducationDetailsData
 import com.example.registrationform.registration.data.UserDetailsData
 
-@Database(entities = [UserDetailsData::class,BasicRegistrationDetailsData::class,EducationDetailsData::class,AddressDetailsData::class], version = 1)
+@Database(entities = [LocationDBRec::class], version = 1)
 abstract class LocationDatabase : RoomDatabase() {
     abstract fun locationDao():LocationDao
     companion object{
