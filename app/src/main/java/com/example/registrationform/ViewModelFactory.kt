@@ -3,6 +3,7 @@ package com.example.registrationform
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.registrationform.location.LocationViewModel
 import com.example.registrationform.registration.AddressDetailsViewModel
 import com.example.registrationform.registration.BasicDetailsViewModel
 import com.example.registrationform.registration.EducationDetailsFragmentViewModel
@@ -23,6 +24,9 @@ class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
         }
         else if (modelClass.isAssignableFrom(AddressDetailsViewModel::class.java)){
             return AddressDetailsViewModel() as T
+        }
+        else if (modelClass.isAssignableFrom(LocationViewModel::class.java)){
+            return LocationViewModel() as T
         }
         else{
             throw Exception("Unknown ViewModel Class")
