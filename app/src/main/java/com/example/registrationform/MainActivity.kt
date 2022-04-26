@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     val locationPermissionRequest = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
+        var havePermission = true
         when {
             permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
                 Toast.makeText(this,"Fine Location permission granted",Toast.LENGTH_SHORT).show()
@@ -33,8 +34,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Course Location permission granted",Toast.LENGTH_SHORT).show()
             }
             else -> {
+                havePermission=false
                 Toast.makeText(this,"Location permission is not granted",Toast.LENGTH_SHORT).show()
             }
+        }
+        if(havePermission) {
+            locationViewModel.startLocationWorker(application)
         }
     }
     @RequiresApi(Build.VERSION_CODES.N)
@@ -55,7 +60,6 @@ class MainActivity : AppCompatActivity() {
             adapter.updateUsers(it)
         }
         enableLocation()
-        locationViewModel.startLocationWorker(application)
 
     }
 
