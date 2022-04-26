@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         if(havePermission) {
-            locationViewModel.startLocationWorker(application)
+            locationViewModel.startLocationWorker(this)
         }
     }
     @RequiresApi(Build.VERSION_CODES.N)
