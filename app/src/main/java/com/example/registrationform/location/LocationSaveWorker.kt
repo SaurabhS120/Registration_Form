@@ -11,7 +11,8 @@ class LocationSaveWorker(context: Context, workerParams: WorkerParameters) :
     val location_database = LocationDatabase.getDatabase(context).locationDao()
     override fun doWork(): Result {
         val locationString = inputData.getString(WorkerConstants.KEY_RESULT)?:""
-        location_database.insertLocation(LocationDBRec(0,locationString))
+        val dateString = inputData.getString(WorkerConstants.KEY_DATE)?:""
+        location_database.insertLocation(LocationDBRec(0,locationString,dateString))
         return Result.success()
     }
 }

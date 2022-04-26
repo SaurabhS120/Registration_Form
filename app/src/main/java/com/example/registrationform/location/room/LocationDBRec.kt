@@ -10,5 +10,7 @@ data class LocationDBRec (
     @PrimaryKey(autoGenerate = true)
     val id:Int,
     @ColumnInfo
-    val locationString: String
+    val locationString: String,
+    @ColumnInfo
+    val date:String
     )
